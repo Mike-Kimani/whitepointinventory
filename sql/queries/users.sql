@@ -13,3 +13,7 @@ SELECT * FROM users WHERE password = $1 AND email = $2;
 
 -- name: GetUserByID :one
 SELECT * FROM users WHERE id = $1;
+
+-- name: GetUsers :many
+SELECT * FROM users
+ORDER BY name ASC;

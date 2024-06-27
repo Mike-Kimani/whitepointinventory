@@ -62,6 +62,7 @@ func main() {
 	v1Router.Get("/healthz", handlerHealth)
 	v1Router.Post("/users", apiCfg.handlerCreateUser)
 	v1Router.Get("/users", apiCfg.handlerGetUserFromCookie)
+	v1Router.Get("/user", apiCfg.handlerGetUsers)
 	v1Router.Post("/login", apiCfg.handlerUserLogin)
 	v1Router.Post("/logout", apiCfg.handlerUserLogout)
 	v1Router.Post("/farmers", apiCfg.handlerCreateFarmer)

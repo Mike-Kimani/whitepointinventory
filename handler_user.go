@@ -140,3 +140,12 @@ func (apiCfg *apiConfig) handlerUserLogout(w http.ResponseWriter, r *http.Reques
 	}
 	http.SetCookie(w, &cookie)
 }
+
+func (apiCfg *apiConfig) handlerGetUsers(w http.ResponseWriter, r *http.Request) {
+	users, err := apiCfg.DB.GetUsers(r.Context())
+	if err != nil {
+		respondWithError(w, 500, fmt.Sprintf("Couldn't get users: %v", err))
+		return
+	}
+	respondWithJSON(w, 200, users)
+}

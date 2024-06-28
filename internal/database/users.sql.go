@@ -115,7 +115,7 @@ func (q *Queries) GetUserByPasswordAndEmail(ctx context.Context, arg GetUserByPa
 
 const getUsers = `-- name: GetUsers :many
 SELECT id, created_at, updated_at, name, api_key, password, email FROM users
-ORDER BY name ASC
+ORDER BY created_at ASC
 `
 
 func (q *Queries) GetUsers(ctx context.Context) ([]User, error) {

@@ -16,4 +16,4 @@ SELECT * FROM users WHERE id = $1;
 
 -- name: GetUsers :many
 SELECT * FROM users
-ORDER BY name ASC;
+ORDER BY created_at ASC;
